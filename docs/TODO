@@ -1,0 +1,13 @@
+Prototype:
+    [ ] Read data from public API.
+    [ ] Munge public data into required format(s).
+    [ ] Write data to GCS bucket.
+    [ ] Deploy application using Terraform.
+    [ ] Fill out README.md
+
+MVP:
+    [ ] Log application information for debugging etc.
+    [ ] End2End test application using pytest.
+
+Extensions:
+    [ ] Setup CI/CD pipeline
