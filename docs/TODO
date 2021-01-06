@@ -10,3 +10,6 @@ MVP:
 
 Extensions:
     [ ] Setup CI/CD pipeline
+
+Fixes:
+    [ ] Use Terraform workspaces to manage two different set of states.

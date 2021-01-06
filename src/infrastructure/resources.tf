@@ -14,7 +14,7 @@ data "archive_file" "function_source" {
 
 resource "google_storage_bucket_object" "function_source" {
   bucket = var.source_bucket
-  name   = replace(var.function_source_remote, ".zip", "${data.archive_file.function_source.output_md5}.zip")
+  name   = var.function_source_remote
   source = local.build_path
 }
 
@@ -23,6 +23,8 @@ resource "google_storage_bucket_object" "function_source" {
 ####################
 
 resource "google_cloudfunctions_function" "collect_orderbook" {
+  depends_on = [google_storage_bucket_object.function_source]
+
   name        = "${var.function_name}-collect-orderbook"
   description = "Mines publically available cryptocurrency data from Binance."
   runtime     = "python38"
@@ -40,7 +42,7 @@ resource "google_cloudfunctions_function" "collect_orderbook" {
 
   environment_variables = {
     "BUCKET_NAME" = var.output_bucket,
-    "KEY_PREFIX"  = var.output_prefix,
+    "KEY_PREFIX"  = "${var.output_prefix}/orderbook",
     "TICKERS"     = "ETHBTC,LTCBTC"
   }
 }
