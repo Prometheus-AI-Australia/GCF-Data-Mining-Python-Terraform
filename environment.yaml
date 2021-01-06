@@ -3,8 +3,12 @@ channels:
   - defaults
 dependencies:
   - _libgcc_mutex=0.1
+  - appdirs=1.4.4
+  - attrs=20.3.0
+  - black=19.3b0
   - ca-certificates=2020.12.8
   - certifi=2020.12.5
+  - click=7.1.2
   - ld_impl_linux-64=2.33.1
   - libedit=3.1.20191231
   - libffi=3.3
@@ -18,9 +22,55 @@ dependencies:
   - setuptools=51.0.0
   - sqlite=3.33.0
   - tk=8.6.10
+  - toml=0.10.1
   - tzdata=2020d
   - wheel=0.36.2
   - xz=5.2.5
   - zlib=1.2.11
+  - pip:
+    - autobahn==20.12.3
+    - automat==20.2.0
+    - cachetools==4.2.0
+    - cffi==1.14.4
+    - chardet==4.0.0
+    - constantly==15.1.0
+    - cryptography==3.3.1
+    - dateparser==1.0.0
+    - google-api-core==1.24.1
+    - google-auth==1.24.0
+    - google-cloud-core==1.5.0
+    - google-cloud-storage==1.35.0
+    - google-crc32c==1.1.0
+    - google-resumable-media==1.2.0
+    - googleapis-common-protos==1.52.0
+    - hyperlink==20.0.1
+    - idna==2.10
+    - incremental==17.5.0
+    - iniconfig==1.1.1
+    - packaging==20.8
+    - pluggy==0.13.1
+    - protobuf==3.14.0
+    - py==1.10.0
+    - pyasn1==0.4.8
+    - pyasn1-modules==0.2.8
+    - pycparser==2.20
+    - pyhamcrest==2.0.2
+    - pyopenssl==20.0.1
+    - pyparsing==2.4.7
+    - pytest==6.2.1
+    - python-binance==0.7.5
+    - python-dateutil==2.8.1
+    - python-dotenv==0.15.0
+    - pytz==2020.5
+    - regex==2020.11.13
+    - requests==2.25.1
+    - rsa==4.6
+    - service-identity==18.1.0
+    - six==1.15.0
+    - twisted==20.3.0
+    - txaio==20.12.1
+    - tzlocal==2.1
+    - urllib3==1.26.2
+    - zope-interface==5.2.0
 prefix: /home/ubuntu/miniconda3/envs/gcf-data-mining
 

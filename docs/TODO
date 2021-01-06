@@ -1,7 +1,6 @@
 Prototype:
-    [ ] Read data from public API.
-    [ ] Munge public data into required format(s).
-    [ ] Write data to GCS bucket.
+    [X] Collect orderbook data @done(21-01-06 13:07)
+    [ ] Collect candlestick data
     [ ] Deploy application using Terraform.
     [ ] Fill out README.md
 
