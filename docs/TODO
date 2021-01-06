@@ -13,3 +13,6 @@ Extensions:
 
 Fixes:
     [ ] Use Terraform workspaces to manage two different set of states.
+        Maybe this isn't such a big deal? Realistically, you'd want a completely
+        fresh copy of the source (such as a CI/CD pipeline) and it wouldn't 
+        even know that there is another backend state.
