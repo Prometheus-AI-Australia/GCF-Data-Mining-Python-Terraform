@@ -25,7 +25,9 @@ class MockConfiguration:
     binance = DotDict(
         {
             "tickers": ["ETHBTC", "LTCBTC"],
+            "orderbook_prefix": "orderbook",
             "orderbook_limit": 500,
+            "kline_prefix": "candlesticks",
             "kline_interval": "15m",
             "kline_limit": 500,
         }

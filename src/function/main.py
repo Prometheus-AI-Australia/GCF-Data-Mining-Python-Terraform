@@ -27,7 +27,13 @@ def collect_orderbooks(event, context):
     book = binance.get_orderbooks()
 
     gcs.upload(
-        key=f"{config.gcp.prefix}/{format_filename(context.timestamp)}",
+        key="/".join(
+            [
+                config.gcp.prefix,
+                config.binance.orderbook_prefix,
+                format_filename(context.timestamp),
+            ]
+        ),
         data=json.dumps(book),
         content_type="application/json",
     )
@@ -38,6 +44,20 @@ def collect_orderbooks(event, context):
 @binance.lazy_init
 @gcs.lazy_init
 def collect_candlesticks(event, context):
+    candlesticks = binance.get_candlesticks()
+
+    gcs.upload(
+        key="/".join(
+            [
+                config.gcp.prefix,
+                config.binance.kline_prefix,
+                format_filename(context.timestamp),
+            ]
+        ),
+        data=json.dumps(candlesticks),
+        content_type="application/json",
+    )
+
     return {}
 
 

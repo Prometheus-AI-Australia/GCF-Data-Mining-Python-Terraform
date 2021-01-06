@@ -15,20 +15,35 @@ def collect_orderbooks_data(context):
         "context": context,
         "result": {
             "bucket": "demo-bucket",
-            "key": "data/20180409_075612.json",
+            "key": "data/orderbook/20180409_075612.json",
             "data": json.dumps(
                 {
                     "ETHBTC": binance.get_order_book(symbol="ETHBTC"),
                     "LTCBTC": binance.get_order_book(symbol="LTCBTC"),
                 }
-            ).encode("utf-8"),
+            ),
         },
     }
 
 
 @pytest.fixture
-def collect_candlesticks_data():
-    return {"event": {}, "context": context, "result": {}}  # TODO  # TODO
+def collect_candlesticks_data(context):
+    binance = BinanceClientMock()
+
+    return {
+        "event": {},  # TODO
+        "context": context,
+        "result": {
+            "bucket": "demo-bucket",
+            "key": "data/candlesticks/20180409_075612.json",
+            "data": json.dumps(
+                {
+                    "ETHBTC": binance.get_klines(symbol="ETHBTC"),
+                    "LTCBTC": binance.get_klines(symbol="LTCBTC"),
+                }
+            ),
+        },
+    }
 
 
 @pytest.fixture

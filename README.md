@@ -35,6 +35,12 @@ application into your configured GCP environment.
 make deploy
 ```
 
+You can teardown the stack via the converse command:
+
+```bash
+make destroy
+```
+
 ## Testing
 All Python tests are managed via [pytest](https://docs.pytest.org/en/stable/). 
 To run the testing suite for the first time, you must perform the following 

@@ -9,8 +9,10 @@ class GCPConfig:
 class BinanceConfig:
     tickers = os.environ.get("TICKERS", "").split(",")
 
+    orderbook_prefix = os.environ.get("ORDERBOOK_PREFIX") or "orderbook"
     orderbook_limit = int(os.environ.get("ORDERBOOK_LIMIT", 500))
 
+    kline_prefix = os.environ.get("KLINE_PREFIX") or "candlesticks"
     kline_interval = os.environ.get("KLINE_INTERVAL") or "15m"
     kline_limit = int(os.environ.get("KLINE_LIMIT", 500))
 

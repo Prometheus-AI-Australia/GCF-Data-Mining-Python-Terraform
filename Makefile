@@ -33,7 +33,7 @@ environment.yaml:
 .PHONY: environment.yaml
 
 tests:
-	python -m pytest tests/
+	python -m pytest tests/ -vv
 .PHONY: tests
 
 ########################
