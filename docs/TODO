@@ -1,6 +1,6 @@
 Prototype:
     [X] Collect orderbook data @done(21-01-06 13:07)
-    [ ] Collect candlestick data
+    [X] Collect candlestick data @done(21-01-06 18:11)
     [X] Deploy application using Terraform. @started(21-01-06 13:08) @done(21-01-06 14:48) @lasted(1h40m54s)
     [ ] Fill out README.md
 
@@ -18,3 +18,8 @@ Fixes:
         Maybe this isn't such a big deal? Realistically, you'd want a completely
         fresh copy of the source (such as a CI/CD pipeline) and it wouldn't 
         even know that there is another backend state.
+    [ ] Correct integration test for `test_collect_candlesticks`
+
+Improvements:
+    [ ] Refactor Terraform to use a module for the function for reusability / extendability.
+    [ ] Unit test individual classes used in the application.

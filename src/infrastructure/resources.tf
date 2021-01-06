@@ -42,13 +42,36 @@ resource "google_cloudfunctions_function" "collect_orderbook" {
 
   environment_variables = {
     "BUCKET_NAME" = var.output_bucket,
-    "KEY_PREFIX"  = "${var.output_prefix}/orderbook",
-    "TICKERS"     = "ETHBTC,LTCBTC"
+    "KEY_PREFIX"  = var.output_prefix,
+    "TICKERS"     = "ETHBTC,LTCBTC",
   }
 }
 
 
-# TODO: Collect Candlesticks entrypoint.
+resource "google_cloudfunctions_function" "collect_candlesticks" {
+  depends_on = [google_storage_bucket_object.function_source]
+
+  name        = "${var.function_name}-collect-candlesticks"
+  description = "Mines publically available cryptocurrency candlesticks data from Binance."
+  runtime     = "python38"
+
+  source_archive_bucket = var.source_bucket
+  source_archive_object = var.function_source_remote
+
+  available_memory_mb = 128
+  entry_point         = "collect_candlesticks"
+
+  event_trigger {
+    event_type = "google.pubsub.topic.publish"
+    resource   = google_pubsub_topic.cron.id
+  }
+
+  environment_variables = {
+    "BUCKET_NAME" = var.output_bucket,
+    "KEY_PREFIX"  = var.output_prefix,
+    "TICKERS"     = "ETHBTC,LTCBTC",
+  }
+}
 
 ###################
 ## Pub/Sub Topic ##
