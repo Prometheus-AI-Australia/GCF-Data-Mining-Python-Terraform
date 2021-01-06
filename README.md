@@ -1,9 +1,10 @@
-# Data Mining System Build With Google Cloud Functions
+# Data Mining System Using Google Cloud Functions, Python, and Terraform
 
 ## Introduction
 The Data Mining System has been built with the intent to showcase how one can
-build data mining systems within GCP using their serverless compute engine,
-GCF.
+build data mining systems within GCP using the serverless compute engine,
+GCF. This application uses Python for the application logic and Terraform for
+the IaC solution.
 
 This application periodically polls the [Binance](https://www.binance.com/en) 
 Crypocurrency exchange to collect financial information on different 
