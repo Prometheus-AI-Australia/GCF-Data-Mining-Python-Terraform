@@ -7,6 +7,8 @@ Prototype:
 MVP:
     [ ] Log application information for debugging etc.
     [ ] End2End test application using pytest.
+    [ ] Extend documentation to explain and point to the technologies used, etc.
+    [X] Build a SA diagram using diagrams package. @done(21-01-06 17:39)
 
 Extensions:
     [ ] Setup CI/CD pipeline

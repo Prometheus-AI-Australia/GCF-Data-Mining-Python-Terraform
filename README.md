@@ -11,6 +11,9 @@ cryptocurrencies that are being traded. This information is then written down
 into a Google Cloud Storage bucket where it can be further processed by 
 downstream ETL systems.
 
+## Solution Architecture
+![Solution Architecture Diagram](docs/diagram.png)
+
 ## Configuration
 There are two primary areas to configure the application:
 

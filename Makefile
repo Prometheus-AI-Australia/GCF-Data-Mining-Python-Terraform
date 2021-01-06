@@ -25,6 +25,9 @@ init:
 ## Util Targets ##
 ##################
 
+diagram:
+	python scripts/compile_sa_diagram.py
+
 environment.yaml:
 	conda env export --no-builds > environment.yaml
 .PHONY: environment.yaml
