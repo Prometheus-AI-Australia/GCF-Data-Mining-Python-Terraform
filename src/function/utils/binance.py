@@ -23,7 +23,7 @@ class BinanceClient(LazyClient):
 
     def __init__(self, configuration=None):
         super().__init__()
-        self.client = Client()
+        self.client = Client
 
         # Initialise defaults.
         self.tickers = []
