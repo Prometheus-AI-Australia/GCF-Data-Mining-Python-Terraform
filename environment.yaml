@@ -36,6 +36,7 @@ dependencies:
     - constantly==15.1.0
     - cryptography==3.3.1
     - dateparser==1.0.0
+    - diagrams==0.18.0
     - google-api-core==1.24.1
     - google-auth==1.24.0
     - google-cloud-core==1.5.0
@@ -47,6 +48,8 @@ dependencies:
     - idna==2.10
     - incremental==17.5.0
     - iniconfig==1.1.1
+    - jinja2==2.11.2
+    - markupsafe==1.1.1
     - packaging==20.8
     - pluggy==0.13.1
     - protobuf==3.14.0
@@ -61,6 +64,7 @@ dependencies:
     - python-binance==0.7.5
     - python-dateutil==2.8.1
     - python-dotenv==0.15.0
+    - python-graphviz==0.13.2
     - pytz==2020.5
     - regex==2020.11.13
     - requests==2.25.1
